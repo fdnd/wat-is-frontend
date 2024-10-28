@@ -1,0 +1,61 @@
+/****************/
+/* RADIO BUTTON */
+/****************/
+
+/* label */
+
+label:has([type="radio"]) {
+	position:relative;
+	
+	padding:.25em;
+	
+	display:flex;
+	align-items:center;
+	gap:.25em;
+	
+	border-radius:var(--radius--small);
+	line-height:1;
+
+	cursor:pointer;
+
+	/* icon */
+	&[data-icon]::after {
+		content:attr(data-icon);
+		font-size:1.5em;
+	}
+
+	/* input */
+	input {
+		appearance:none;
+		
+		width:1em;
+		aspect-ratio:1;
+		margin:0;
+		
+		border:var(--border--thin);
+		border-radius:50%;
+		
+		cursor:pointer;
+	}
+}
+
+
+/* focus-visible */
+
+label:has( [type="radio"]:focus-visible ) {
+	outline:var(--outline--thin);
+
+	/* input */
+	input {
+		outline:none;
+	}
+}
+
+
+/* checked */
+
+label:has( [type="radio"]:checked )  {
+	input {
+		background-image:radial-gradient(var(--accent-color) 50%, transparent 0);
+	}
+}

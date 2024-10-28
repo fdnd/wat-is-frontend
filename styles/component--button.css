@@ -1,0 +1,82 @@
+/**********/
+/* BUTTON */
+/**********/
+
+button {
+	padding:.5em;
+	
+	-webkit-appearance:none;
+	appearance:none;
+	background-color:var(--bg-button);
+	border:none;
+	border:var(--border--thin);
+	border-radius:var(--radius--medium);
+
+	color:var(--color-button);
+	font-size:1em;
+	font-weight:var(--weight--medium);
+	
+	cursor:pointer;
+}
+
+
+
+/* button squeaky */
+.button--squeaky {
+	padding:0;
+ 	
+	span {
+		display:block;
+		padding:.75em;
+		height:100%;
+		
+		background-color:var(--bg-button__span);
+		border:inherit;
+		border-radius:inherit;
+		white-space:nowrap;
+		
+		translate:.25em -.25em;
+
+		@media (prefers-reduced-motion:no-preference) {
+			transition:translate .1s ease-out;
+		}
+	}
+}
+
+/* pressed */
+.button--squeaky[aria-pressed=true] {
+	color:var(--color-button--pressed);
+ 
+	span {
+		background-color:var(--bg-button__span--pressed);
+	}
+}
+
+/* pressed checkmark */
+.button--squeaky[aria-pressed=true] span::after {
+	content:"";
+	position:absolute;
+	top:.25em;
+	right:.375em;
+	display:block;
+	width:.3em;
+	height:.6em;
+	background-image:conic-gradient(
+		at .2em .45em, 
+		currentcolor .75turn, 
+		transparent 0);
+	rotate:45deg;
+}
+
+
+/* interaction */
+.button--squeaky:active span {
+	@media (prefers-reduced-motion:no-preference) {
+		translate:.125em -.125em;		
+	}
+}
+
+.button--squeaky:is(:hover, :focus-visible) {
+	background-color:var(--bg-button--focus);
+	outline:none;
+}

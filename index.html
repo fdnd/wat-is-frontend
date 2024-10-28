@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Frontend Design & Development | Wat doe je dan</title>
+  
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/tokens.css">
+
+  <link rel="stylesheet" href="styles/component--button.css">
+  <link rel="stylesheet" href="styles/component--radio.css">
+
+  <link rel="stylesheet" href="styles/general.css">
+ 
+  <link rel="stylesheet" href="styles/landmark--header.css">
+  <link rel="stylesheet" href="styles/landmark--aside.css">
+  <link rel="stylesheet" href="styles/landmark--main.css">
+  <link rel="stylesheet" href="styles/landmark--main__website.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="header--body">
+    <a href="https://www.fdnd.nl/">FDND</a>
+    <menu>
+        <li><button class="button--squeaky" value="tools"><span>Tools & Frameworks</span></button></li>
+        <li><button class="button--squeaky" value="accessible"><span>Toegankelijk</span></button></li>
+        <li><button class="button--squeaky" value="responsive"><span>Responsive</span></button></li>
+        <li><button class="button--squeaky" value="performant"><span>Performant</span></button></li>
+        <!-- <li><button><span>Cross-browser/device</span></button></li> -->
+    </menu>
+  </header>
+  
+  <aside>
+    <form>
+      <label data-icon="🐼"><input type="radio" name="color-theme" value="system" aria-label="automatisch kleurenschema" checked></label>
+      <label data-icon="🐻‍❄️"><input type="radio" name="color-theme" value="light" aria-label="licht kleurenschema"></label>
+      <label data-icon="🐻"><input type="radio" name="color-theme" value="dark" aria-label="donker kleurenschema"></label>
+    </form>
+  </aside>
+
+  <main>
+      <h1 class="visually-hidden">Bij FDND bouwen we elegante, responsive, toegankelijke en snelle website met moderne tools en frameworks</h1>
+
+      <details class="info info--tools">
+        <summary aria-label="info over tools en frameworks">info</summary>
+        <p>De basis van goede websites is <strong>solide HTML plus elegante CSS en JS</strong>. We creeren die code met <strong>moderne tools en frameworks</strong>.</p>
+      </details>
+
+      <details class="info info--accessible">
+        <summary aria-label="info over toegankelijkheid">info</summary>
+        <p>Het web is voor en van iedereen. Onze websites zjjn dan ook <strong>door iedereen te gebruiken</strong> en <strong>sparken hopelijk af en toe joy</strong>.</p>
+      </details>
+
+      <details class="info info--responsive">
+        <summary aria-label="info over responsiveness">info</summary>
+        <p>Onze websites werken <strong>op alle apparten en in alle browsers</strong>. Zo houden we rekening met de <strong>afmeting</strong> van een apparaat en hoe het te <strong>bedienen</strong> is.</p>
+      </details>
+
+      <details class="info info--performant">
+        <summary aria-label="info over performance">info</summary>
+        <p>We zorgen dat onze websites <strong>lekker snel</strong> laden en reageren. We proberen daarbij <strong>zo min mogelijk energie/stroom</strong> te gebruiken.</p>
+      </details>
+
+      <article class="thé-thing">
+        <h2 class="visually-hidden">Zo doen we dat -  elegante, responsive, toegankelijke en snelle websites bouwen.</h2>
+
+        <section class="layer layer--1 layer--white">
+          <h3 class="layer__title"><abbr title="Cascasding Style Sheets">CSS</abbr> & <abbr title="Javascript">JS</abbr></h3>
+          <section class="layer__content website">
+            <header>
+              <a href="https://www.fdnd.nl">FDND</a>
+              <button class="button--menu">menu<span></span><span></span><span></span></button>
+              <nav>
+                <ul>
+                  <li><a href="#studenten">Studenten</a></li>
+                  <li><a href="#workspace">Workspace</a></li>
+                  <li><a href="#faq">FAQ</a></li>
+                </ul>
+              </nav>
+            </header>
+
+            <section id="intro">
+              <h1>Word frontend developer</h1>
+              <p><strong>FDND</strong> is dé <strong>HBO-opleiding</strong> voor Frontend Development in Nederland, <strong>in twee jaar</strong> stomen wij jou klaar voor het werkveld.</p>
+              <img src="photos/header-image.jpg" alt="Twee studenten kijken lachend naar de camera, op de achtergrond zijn twee studenten aan het werk."  width="1371" height="656">
+
+              <dl>
+                <dt>Duur</dt>
+                <dd>2 Jaar</dd>
+                <dt>Type</dt>
+                <dd>Voltijd</dd>
+                <dt>Open dag</dt>
+                <dd>9 Nov 2024</dd>
+              </dl>
+            </section>
+            
+            <section id="studenten">
+              <h2>Studenten</h2>
+              <ul>
+                <li>
+                  <div>
+                    <p><strong>Anna-Kyra</strong></p>
+                    <p>2<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/anna-kyra.jpg" alt="Anna-Kyra" loading="lazy" width="600" height="600">
+                </li>
+                <li>
+                  <div>
+                    <p><strong>Chris</strong></p>
+                    <p>2<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/chris.jpg" alt="Chris" loading="lazy" width="600" height="600">
+                </li>
+                <li>
+                  <div>
+                    <p><strong>Jason</strong></p>
+                    <p>2<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/jason.jpg" alt="Jason" loading="lazy" width="600" height="600">
+                </li>
+                <li>
+                  <div>
+                    <p><strong>Jules</strong></p>
+                    <p>1<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/jules.jpg" alt="Jules" loading="lazy" width="600" height="600">
+                </li>
+                <li>
+                  <div>
+                    <p><strong>Karima</strong></p>
+                    <p>1<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/karima.jpg" alt="Karima" loading="lazy" width="600" height="600">
+                </li>
+                <li>
+                  <div>
+                    <p><strong>Marcin</strong></p>
+                    <p>1<sup>e</sup> jaar</p>
+                  </div>
+                  <img src="photos/marcin.jpg" alt="Marcin" loading="lazy" width="600" height="600">
+                </li>
+              </ul>
+            </section>
+            
+            <section id="workspace">
+              <h2>Agile Workspace</h2>
+              <p>In onze Agile Workspace werken studenten onder begeleiding van <strong>coaches en experts</strong> uit het vak&shy;gebied aan <strong>echte opdrachten</strong> voor <strong>echte opdrachtgevers</strong>.</p>
+              <p><strong>Onze docenten hebben ervaring</strong> in verschillende vak&shy;gebieden zoals responsive, acces&shy;sibility, performance, pro&shy;gressive enhancement en ani&shy;matie. Zo is er altijd een docent die je vraag kan beantwoorden!</p>
+              <p>Het docententeam is een mix van <strong>ervaren docenten</strong> en <strong>front&shy;enders uit de beroepspraktijk</strong>. Een deel van onze docenten werkt ook nog in de praktijk.</p>
+            </section>
+
+            <section id="bonus">
+              <h2 class="visually-hidden">En nu</h2>
+              <article>
+                <h3>Samen&shy;werken?</h3>
+                <p>Ben jij eigenaar of mede&shy;werker van een bedrijf en ben je benieuwd naar de samen&shy;werkings&shy;mogelijk&shy;heden met onze opleiding?</p>
+                <a href="https://partners.fdnd.nl/" data-icon="🤝">Onze partner website</a>
+              </article>
+              <article>
+                <h3>Program&shy;ma</h3>
+                <p>Benieuwd geworden naar ons programma? Wij up&shy;daten ons programma elk jaar om aan de wensen van studenten en praktijk te voldoen.</p>
+                <a href="https://programma.fdnd.nl/" data-icon="📅">Programma 2024/25</a>
+              </article>
+              <article>
+                <h3>Sfeer proeven?</h3>
+                <p>Wil je een keer met een van onze studenten te praten? Dat kan! Elke maandag kan je een ochtend meelopen en de sfeer zelf proeven.</p>
+                <a href="mailto:info-fdnd@hva.nl?subject=Ik%20wil%20graag%20een%20maandag%20meelopen" data-icon="✋">Ik wil meelopen</a>
+              </article>
+            </section>
+
+            <section id="faq">
+              <h2>Veel&shy;gestelde vragen</h2>
+              <details>
+                <summary>Moet ik al kunnen coderen?</summary>
+                <p>Nee, je hebt helemaal geen voorkennis nodig om te be&shy;ginnen aan deze opleiding, we kunnen je alles leren! Als je al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te ver&shy;be&shy;teren en te verdiepen in de stof.</p>
+              </details>
+              <details>
+                <summary>Wat is frontend development?</summary>
+                <p>Een frontend developer ont&shy;werpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.</p>
+              </details>
+              <details>
+                <summary>Hoe werkt deze frontend developer opleiding?</summary>
+                <p>Je richt je tijdens deze twee&shy;jarige studie op webdesign, visual interface design en frontend development. Vanaf het begin van de opleiding werk je aan actuele op&shy;dracht&shy;en van échte opdracht&shy;gevers, en leer je samen&shy;werken in multi&shy;disciplinaire teams.</p>
+              </details>
+              <details>
+                <summary>Wat is een associate degree?</summary>
+                <p>Een associate degree-opleiding is een twee&shy;jarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een associate degree kies je voor een praktijk&shy;gerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk.</p>
+              </details>
+              <details>
+                <summary>Hoe krijg ik les?</summary>
+                <p>De beste manier om iets te leren, is door het te doen. FDND is een flexibele, praktijk&shy;gerichte hbo-opleiding. Vanaf dag één werk je - individueel én in teamverband - aan actuele op&shy;drachten voor echte opdracht&shy;gevers.</p>
+              </details>
+              <details>
+                <summary>Wat kan je worden na je diploma?</summary>
+                <p>FDND werkt nauw samen met bedrijven uit de creatieve industrie. Tijdens de opleiding doe je veel ervaring op in de praktijk en krijg je ook de kans om een net&shy;werk op te bou&shy;wen, waarbinnen je mogelijk een stage&shy;plek en een werk&shy;plek kunt vinden.</p>
+              </details>
+              <details>
+                <summary>Wat zijn de toelatingseisen?</summary>
+                <p>Je kunt FDND volgen met een mbo-4, havo- of vwo-diploma. Wil jij graag starten met deze HvA-opleiding maar beschik je niet over een havo-, vwo- of mbo-diploma niveau 4? Dan kun je op grond van je leeftijd een toelatingsexamen maken.</p>
+              </details>
+            </section>
+            <footer>
+              <h2>FDND microsites</h2>
+
+              <p>FDND maakt gebruik van microsites. Microsites zijn kleine websites ter ondersteuning van een campagne, informatie over een product, dienst of voor een ander specifiek doel.</p>
+
+              <nav>
+                <ul>
+                  <li><a href="https://fdnd.nl/">FDND.nl</a></li>
+                  <li><a href="https://contact.fdnd.nl/">contact en route</a></li>
+                  <li><a href="https://programma.fdnd.nl/">programma</a></li>
+                  <li><a href="https://partners.fdnd.nl/">partners</a></li>
+                  <li><a href="https://niveaumatrix.fdnd.nl/">niveaumatrix</a></li>
+                  <li><a href="https://docs.fdnd.nl/">documenten</a></li>
+                </ul>
+              </nav>
+              
+              <svg class="pay-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 229 24">
+                <title>Creating Tomorrow</title>
+                <use xlink:href="images/logo-creating-tomorrow.svg#logo-creating-tomorrow"></use>
+              </svg>
+
+            </footer>
+          </section>
+        </section>
+
+        <section class="layer layer--2 layer--yellow">
+          <h3 class="layer__title">dé <abbr title="Hypertext Markup Language">HTML</abbr></h3>
+          <section class="layer__content">
+            <pre><code>&lt;section>
+ &lt;h2>Studenten&lt;/h2>
+
+ &lt;ul>
+  &lt;li>
+   &lt;p>Anna-Kyra&lt;/p>
+   &lt;p>2e jaar&lt;/p>
+   &lt;img src="anna.png" alt="anna-kyra">
+  &lt;/li>
+
+  &lt;li>
+   &lt;p>Chris&lt;/p>
+   &lt;p>2e jaar&lt;/p>
+   &lt;img src="chris.png" alt="chris">
+  &lt;/li>
+  
+  &lt;li>
+   &lt;p>Jason&lt;/p>
+   &lt;p>2e jaar&lt;/p>
+   &lt;img src="jason.png" alt="jason">
+  &lt;/li>
+
+  &lt;li>
+   &lt;p>Jules&lt;/p>
+   &lt;p>1e jaar&lt;/p>
+   &lt;img src="jules.png" alt="jules">
+  &lt;/li>
+
+  &lt;li>
+   &lt;p>Karima&lt;/p>
+   &lt;p>1e jaar&lt;/p>
+   &lt;img src="karima.png" alt="karima">
+  &lt;/li>
+
+  &lt;li>
+   &lt;p>Marcin&lt;/p>
+   &lt;p>1e jaar&lt;/p>
+   &lt;img src="marcin.png" alt="marcin">
+  &lt;/li>
+ &lt;/ul>
+&lt;/section></code></pre>
+          </section>
+        </section>
+
+        <section class="layer layer--3 layer--green">
+          <h3 class="layer__title">framework</h3>
+          <section class="layer__content">
+            <pre><code>&lt;script>
+ // importing other components
+ import Faces from './Faces.svelte'
+
+ let count = 0
+
+ const incrementCount = () => {
+  count++
+ }
+&lt;/script></code></pre>
+          </section>
+        </section>
+
+        <section class="layer layer--4 layer--green">
+          <h3 class="layer__title"><abbr title="Content Management System">CMS</abbr> / <abbr title="Javscript Object Notation">JSON</abbr></h3>
+          <section class="layer__content">
+            <pre><code>{
+ "students": [    
+  {
+   "name": "Anna-Kyra",
+   "year": "jaar 2",
+   "image": "anna.png"
+  },
+  {
+   "name": "Chris",
+   "year": "jaar 2",
+   "image": "chris.png"
+  },
+  {
+   "name": "Jason",
+   "year": "jaar 2",
+   "image": "jason.png"
+  },
+  {
+   "name": "Jules",
+   "year": "jaar 1",
+   "image": "jules.png"
+  },
+  {
+   "name": "Karima",
+   "year": "jaar 1",
+   "image": "karima.png"
+  },
+  {
+   "name": "Marcin",
+   "year": "jaar 1",
+   "image": "marcin.png"
+  }
+ ]
+}</code></pre>
+          </section>
+        </section>
+      </article>
+
+
+  </main>
+  
+  <script defer src="scripts/landmark--header.js"></script>
+  <script defer src="scripts/landmark--aside.js"></script>
+  <script defer src="scripts/landmark--main__website.js"></script>
+</body>
+</html>

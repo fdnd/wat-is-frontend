@@ -1,0 +1,75 @@
+/**********/
+/* HEADER */
+/**********/
+
+.header--body {
+	position:sticky;
+	top:0;
+	z-index:10;
+
+	padding:1em var(--whitespace);
+	
+	display:flex;
+	gap:.75em;
+
+	overflow:auto;
+	overscroll-behavior-x:contain;
+	scrollbar-width: none;
+	
+	background-color:var(--background);
+}
+
+.header--body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+/********/
+/* MENU */
+/********/
+
+.header--body menu {
+	width:fit-content;
+	margin:0 0 0 0;
+	padding:0;
+	list-style-type:"";
+	
+	display:flex;
+	gap:.75em;
+}
+
+
+
+
+
+/********/
+/* LOGO */
+/********/
+
+.header--body a {
+	margin:0 0 0 0;
+	padding:0 .75rem;
+
+	display:flex;
+	align-items:center;
+
+	border:var(--border--thin);
+	border-radius:var(--radius--medium);
+	background-color: light-dark(var(--grey), var(--blue));
+	
+	font-size:1em;
+	font-weight:800;
+	line-height:2rem;
+	color:var(--color);
+	text-underline-offset:.15em;
+
+
+	&:is(:hover, :focus-visible) {
+		outline:none;
+		text-decoration-style:wavy;
+		text-decoration-thickness:.08em;
+	}
+}

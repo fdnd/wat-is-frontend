@@ -1,0 +1,84 @@
+:root {
+	color-scheme:light dark;
+}
+
+:root:has([value="light"]:checked) {
+	color-scheme:light;
+}
+
+:root:has([value="dark"]:checked) {
+	color-scheme:dark;
+}
+
+
+
+* {
+	/* palette */
+	--white: #fff;
+	--black: #000;
+	--grey: #ECECEC;
+
+	--purple: #A675F5;
+	--blue: #050542;
+	--blue-50: #05054288;
+	--green: #66E5BF;
+	--yellow: #FFFC86;
+
+
+
+	/* basic colors */
+	--color:light-dark( var(--blue), var(--green) );
+	--background:light-dark( var(--purple), var(--blue) );
+	--accent-color:light-dark( var(--blue), var(--green) );
+	
+
+
+	/* borders */
+	--border-color:light-dark( var(--blue), var(--green));
+	--border--thin:solid 1px var(--border-color);
+	--border--thin--tr:solid 1px transparent;
+	
+	/* border-radii */
+	--radius--small:.25rem;
+	--radius--medium:.5rem;
+	--radius--large:1rem;
+	--radius--xlarge:1.5rem;
+	
+	/* outlines */
+	--outline--thin:solid 1px var(--outline-color);
+	--outline-color:var(--border-color);
+
+	/* font-weights */
+	--weight--normal:400;
+	--weight--medium:550;
+	--weight--bold:700;
+
+	/* whitespace */
+	--whitespace:clamp(1em, 5vw, 2em);
+
+
+
+	/* button */
+	--bg-button:light-dark(var(--grey), var(--blue));
+	--bg-button__span:light-dark(var(--grey), var(--blue));
+	--color-button:var(--color);
+
+	--bg-button__span--pressed:light-dark(var(--green), var(--green));
+	--color-button--pressed:light-dark(var(--color), var(--blue));
+
+	--bg-button--focus:light-dark(var(--blue), var(--white));
+
+
+
+	/* website → layer */
+	--color-section__h3:var(--blue);
+	--bg-section__h3:var(--white);
+
+	--color-section__div:light-dark( var(--blue), var(--color-layer, var(--white)) );
+	--border-color-section__div:light-dark( var(--blue), var(--color-layer, var(--white)) );
+	--bg-section__div:light-dark(var(--color-layer, var(--white)), var(--blue) );
+
+	--color-layer--yellow:var(--yellow);
+	--color-layer--green:var(--green);
+	--color-layer--purple:var(--purple);
+}
