@@ -30,8 +30,9 @@ label:has([type="radio"]) {
 		
 		flex-shrink:0;
 		width:1em;
-		aspect-ratio:1;
+		height:1rem;
 		margin:0;
+		align-self:center;
 		
 		border:var(--border--thin);
 		border-radius:50%;
