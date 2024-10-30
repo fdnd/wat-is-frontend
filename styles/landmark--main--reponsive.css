@@ -1,0 +1,68 @@
+/**************/
+/* RESPONSIVE */
+/**************/
+
+[data-mode="responsive"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--responsive {
+		visibility: visible;
+	}
+
+
+
+	/*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		transition: 
+			width 1.35s,
+			height 1.35s;
+	}
+	
+}
+
+
+
+
+
+
+/*******************/
+/* RESPONSIVE → ON */
+/*******************/
+
+[data-mode="responsive"][data-mode-status="true"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--responsive {
+		translate: 0;
+
+		@media (prefers-reduced-motion:no-preference) {
+			transition:translate .5s;
+		}
+	}
+
+
+
+	/*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		resize: both;
+		overflow:hidden;
+		max-width:100cqw;
+
+		transition: 
+			width 0s,
+			height 0s;
+	}
+
+}

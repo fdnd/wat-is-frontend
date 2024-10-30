@@ -1,0 +1,166 @@
+/*********/
+/* TOOLS */
+/*********/
+
+[data-mode="tools"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--tools {
+		visibility: visible;
+	}
+
+
+
+	/*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		transform-style:preserve-3d;
+		transform:
+			rotateX(var(--rX, 0deg))
+			rotateY(var(--rY, 0deg));
+		
+		transition:transform .75s .6s;
+	}
+	
+	.thé-thing * {
+		transform-style:preserve-3d;
+	}
+
+
+
+	/**********/
+	/* LAYERS */
+	/**********/
+
+	.layer--tools {
+
+
+		display:grid;
+	
+		transition:translate .75s .6s;
+		
+		translate:
+			0 
+			calc(var(--tY, 0deg) * (var(--factor) + 0)) 
+			calc(var(--tZ, 0deg) * var(--factor));
+	}
+
+	.layer--css { --factor:3; }
+	.layer--html { --factor:1; }	
+	.layer--framework { --factor:-1; }
+	.layer--data { --factor:-3; }
+
+
+
+	/******************/
+	/* LAYERS → TITLE */
+	/******************/
+
+	.layer--tools__title {
+		display:block;
+
+		transition:
+			translate .25s .25s,
+			transform .25s;
+	}
+}
+
+
+
+
+
+/**************/
+/* TOOLS → ON */
+/**************/
+
+[data-mode="tools"][data-mode-status="true"] {
+	
+	/********/
+	/* INFO */
+	/********/
+
+	.info--tools {
+		translate: 0;
+
+		@media (prefers-reduced-motion:no-preference) {
+			transition:translate .5s;
+		}
+	}
+
+
+
+	/*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		--rX:-15deg;
+		--rY:60deg;
+		
+		--tY:.75em;
+		--tZ:min(18vw - 1.75em, 7.5em);
+
+		transition:transform .75s;
+	}
+
+
+
+	/**********/
+	/* LAYERS */
+	/**********/
+
+	.layer--tools {
+		transition:translate .5s .75s;
+	}
+
+
+
+	/******************/
+	/* LAYERS → TITLE */
+	/******************/
+	
+	.layer--tools__title {
+		translate:0 calc(-100% - 1.5em);
+		
+		transform:
+			rotateY( calc(var(--rY) * -1) )
+			rotateX( calc(var(--rX) * -1) );
+		
+		transition:
+			translate .5s 1.35s,
+			transform .25s 1.85s ease-in;
+	}
+
+
+
+	/**************/
+	/* RESPONSIVE */
+	/**************/
+
+	@media (width > 26em) {
+		.thé-thing {
+			--rY:55deg;
+		}
+	}
+	
+	@media (width > 36em) {
+		.thé-thing {
+			--rY:-50deg;
+
+			--tY:.375em;
+		}
+	}
+	
+	@media (width > 46em) {
+		.thé-thing {
+			--rY:-45deg;
+
+			--tY:0em;
+		}
+	}
+}

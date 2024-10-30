@@ -1,0 +1,39 @@
+/**************/
+/* ACCESSIBLE */
+/**************/
+
+[data-mode="accessible"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--accessible {
+		visibility: visible;
+	}
+
+}
+
+
+
+
+
+/*******************/
+/* ACCESSIBLE → ON */
+/*******************/
+
+[data-mode="accessible"][data-mode-status="true"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--accessible {
+		translate: 0;
+
+		@media (prefers-reduced-motion:no-preference) {
+			transition:translate .5s;
+		}
+	}
+	
+}

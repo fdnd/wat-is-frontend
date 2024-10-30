@@ -15,15 +15,30 @@ button {
 	color:var(--color-button);
 	font-size:1em;
 	font-weight:var(--weight--medium);
-	
-	cursor:pointer;
+
+	&:not(:disabled) {
+		cursor:pointer;
+	}
 }
 
 
 
-/* button squeaky */
+/******************/
+/* BUTTON SQUEAKY */
+/******************/
+
 .button--squeaky {
 	padding:0;
+
+	&:disabled {
+		background-image:
+			repeating-linear-gradient(
+				-45deg,
+				transparent calc(50% - .2em) calc(50% - .5px),
+				color-mix(in srgb, currentcolor, transparent) 0 calc(50% + .5px),
+				transparent 0 calc(50% + .2em)
+			);
+	}
  	
 	span {
 		display:block;
@@ -40,14 +55,29 @@ button {
 		@media (prefers-reduced-motion:no-preference) {
 			transition:translate .1s ease-out;
 		}
+
+		/* disabled */
+		:disabled & {
+			background-image:
+				repeating-linear-gradient(
+					45deg,
+					transparent calc(50% - .2em) calc(50% - .5px),
+					color-mix(in srgb, currentcolor, transparent) 0 calc(50% + .5px),
+					transparent 0 calc(50% + .2em)
+				);
+			background-size: calc(100% - .8em) calc(100% - .8em);
+			background-repeat:no-repeat;
+			background-position:center;
+		}
 	}
 }
 
 /* pressed */
 .button--squeaky[aria-pressed=true] {
-	color:var(--color-button--pressed);
+	
  
 	span {
+		color:var(--color-button--pressed);
 		background-color:var(--bg-button__span--pressed);
 	}
 }
@@ -63,20 +93,20 @@ button {
 	height:.6em;
 	background-image:conic-gradient(
 		at .2em .45em, 
-		currentcolor .75turn, 
+		currentColor .75turn, 
 		transparent 0);
 	rotate:45deg;
 }
 
 
 /* interaction */
-.button--squeaky:active span {
+.button--squeaky:not(:disabled):active span {
 	@media (prefers-reduced-motion:no-preference) {
 		translate:.125em -.125em;		
 	}
 }
 
-.button--squeaky:is(:hover, :focus-visible) {
+.button--squeaky:not(:disabled):is(:hover, :focus-visible) {
 	background-color:var(--bg-button--focus);
 	outline:none;
 }

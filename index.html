@@ -19,7 +19,14 @@
  
   <link rel="stylesheet" href="styles/landmark--header.css">
   <link rel="stylesheet" href="styles/landmark--aside.css">
+
   <link rel="stylesheet" href="styles/landmark--main.css">
+
+  <link rel="stylesheet" href="styles/landmark--main--tools.css">
+  <link rel="stylesheet" href="styles/landmark--main--accessible.css">
+  <link rel="stylesheet" href="styles/landmark--main--reponsive.css">
+  <link rel="stylesheet" href="styles/landmark--main--performant.css">
+
   <link rel="stylesheet" href="styles/landmark--main__website.css">
 
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -71,11 +78,12 @@
       <article class="thé-thing">
         <h2 class="visually-hidden">Zo doen we dat -  elegante, responsive, toegankelijke en snelle websites bouwen.</h2>
 
-        <section class="layer layer--1 layer--white">
-          <h3 class="layer__title"><abbr title="Cascasding Style Sheets">CSS</abbr> & <abbr title="Javascript">JS</abbr></h3>
+        <section class="layer layer--tools layer--performant layer--css layer--top is--white">
+          <h3 class="layer__title layer--tools__title is--left">+ <abbr title="Cascasding Style Sheets">CSS</abbr> & <abbr title="Javascript">JS</abbr></h3>
+          <h3 class="layer__title layer--performant__title is--right">browser</h3>
           <section class="layer__content website">
             <header>
-              <a href="https://www.fdnd.nl">FDND</a>
+              <a href="#intro">FDND</a>
               <button class="button--menu">menu<span></span><span></span><span></span></button>
               <nav>
                 <ul>
@@ -228,6 +236,7 @@
                 <p>Je kunt FDND volgen met een mbo-4, havo- of vwo-diploma. Wil jij graag starten met deze HvA-opleiding maar beschik je niet over een havo-, vwo- of mbo-diploma niveau 4? Dan kun je op grond van je leeftijd een toelatingsexamen maken.</p>
               </details>
             </section>
+
             <footer>
               <h2>FDND microsites</h2>
 
@@ -253,8 +262,8 @@
           </section>
         </section>
 
-        <section class="layer layer--2 layer--yellow">
-          <h3 class="layer__title">dé <abbr title="Hypertext Markup Language">HTML</abbr></h3>
+        <section class="layer layer--tools layer--html is--yellow">
+          <h3 class="layer__title layer--tools__title is--left">dé <abbr title="Hypertext Markup Language">HTML</abbr></h3>
           <section class="layer__content">
             <pre><code>&lt;section>
  &lt;h2>Studenten&lt;/h2>
@@ -262,37 +271,37 @@
  &lt;ul>
   &lt;li>
    &lt;p>Anna-Kyra&lt;/p>
-   &lt;p>2e jaar&lt;/p>
+   &lt;p>2&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="anna.png" alt="anna-kyra">
   &lt;/li>
 
   &lt;li>
    &lt;p>Chris&lt;/p>
-   &lt;p>2e jaar&lt;/p>
+   &lt;p>2&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="chris.png" alt="chris">
   &lt;/li>
   
   &lt;li>
    &lt;p>Jason&lt;/p>
-   &lt;p>2e jaar&lt;/p>
+   &lt;p>2&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="jason.png" alt="jason">
   &lt;/li>
 
   &lt;li>
    &lt;p>Jules&lt;/p>
-   &lt;p>1e jaar&lt;/p>
+   &lt;p>1&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="jules.png" alt="jules">
   &lt;/li>
 
   &lt;li>
    &lt;p>Karima&lt;/p>
-   &lt;p>1e jaar&lt;/p>
+   &lt;p>1&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="karima.png" alt="karima">
   &lt;/li>
 
   &lt;li>
    &lt;p>Marcin&lt;/p>
-   &lt;p>1e jaar&lt;/p>
+   &lt;p>1&lt;sup>e&lt;/sup> jaar&lt;/p>
    &lt;img src="marcin.png" alt="marcin">
   &lt;/li>
  &lt;/ul>
@@ -300,8 +309,8 @@
           </section>
         </section>
 
-        <section class="layer layer--3 layer--green">
-          <h3 class="layer__title">framework</h3>
+        <section class="layer layer--tools layer--framework is--green">
+          <h3 class="layer__title layer--tools__title is--left">framework</h3>
           <section class="layer__content">
             <pre><code>&lt;script>
  // importing other components
@@ -316,43 +325,78 @@
           </section>
         </section>
 
-        <section class="layer layer--4 layer--green">
-          <h3 class="layer__title"><abbr title="Content Management System">CMS</abbr> / <abbr title="Javscript Object Notation">JSON</abbr></h3>
+        <section class="layer layer--tools layer--data is--green">
+          <h3 class="layer__title layer--tools__title is--left"><abbr title="Content Management System">CMS</abbr> / <abbr title="Javscript Object Notation">JSON</abbr></h3>
           <section class="layer__content">
             <pre><code>{
  "students": [    
   {
    "name": "Anna-Kyra",
-   "year": "jaar 2",
+   "year": 2,
    "image": "anna.png"
   },
   {
    "name": "Chris",
-   "year": "jaar 2",
+   "year": 2,
    "image": "chris.png"
   },
   {
    "name": "Jason",
-   "year": "jaar 2",
+   "year": 2,
    "image": "jason.png"
   },
   {
    "name": "Jules",
-   "year": "jaar 1",
+   "year": 1,
    "image": "jules.png"
   },
   {
    "name": "Karima",
-   "year": "jaar 1",
+   "year": 1,
    "image": "karima.png"
   },
   {
    "name": "Marcin",
-   "year": "jaar 1",
+   "year": 1,
    "image": "marcin.png"
   }
  ]
 }</code></pre>
+          </section>
+        </section>
+
+        <section class="layer layer--performant layer--connection">
+          <p>
+            <strong>lekker snel</strong>(en zuinig)
+          </p>
+          <!-- fietsen -->
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+          <svg class="bicycle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><use href="#bicycle"></use></svg>
+        </section>
+
+        </section><section class="layer layer--performant layer--server is--white">
+          <h3 class="layer__title layer--performant__title is--right">server</h3>
+          <section class="layer__content server">
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
           </section>
         </section>
       </article>
@@ -363,5 +407,47 @@
   <script defer src="scripts/landmark--header.js"></script>
   <script defer src="scripts/landmark--aside.js"></script>
   <script defer src="scripts/landmark--main__website.js"></script>
+
+  <svg viewBox="0 0 512 512" width="0" height="0">
+    <defs>
+      <style>
+        .wheel { fill: #ECECEC; }
+        .gear { fill: #d5d5d3; } 
+        .saddle { fill: #5b5e65; }
+        .body { fill: #fcd3c4; }
+        .pants { fill: #484a50; }  
+      </style>
+
+      <g id="bicycle">
+        <g id="wheel-saddle-gear">
+          <circle class="wheel" cx="109.4" cy="402.5" r="100.9"/>
+          <circle class="wheel" cx="402.6" cy="402.5" r="100.9"/>
+  
+          <circle class="gear" cx="109.4" cy="402.5" r="25.6"/>
+          <circle class="gear" cx="402.6" cy="402.5" r="34"/>
+          <circle class="gear" cx="275.2" cy="419" r="38.4"/>
+          
+          <path class="saddle" d="M389.7,209.8h-59.5c-7.1,0-12.8,5.7-12.8,12.8h0c0,7.1,5.7,12.8,12.8,12.8h59.5c7.1,0,12.8-5.7,12.8-12.8h0c0-7.1-5.7-12.8-12.8-12.8Z"/>
+        </g>
+  
+        <g id="body">
+          <path class="body" d="M354.7,143.1c-38.2-71.8-122.6-40.9-159.1-47,5.9-71.2-100.2-18.6-57.8,13.7,2.7,38.5.8,4.4,24.6,33.8,19.3.7,3.2-27.4,27.6-11.5,3,66.2-17.8,79.1-65.9,112.1-11.5-5.1-45.7-9.3-35,13.1,23.3,43.9,89.3-24.8,116-33.8,0,0,21.4-45.4,21.4-45.4l70.1,11.7-76,64c-19.4,8.7,34.2,125.5,34.1,138.4-24.5,7.3-29.4,16.2-18.7,39.9,0,7.2,46.6-12.4,49.2-11.4,33.8-3.4-21.8-118.7-19.4-133.8,51.4-29.8,168.3-86.2,89-143.7Z"/>
+        </g>
+  
+        <g id="pants">
+          <path class="pants" d="M354.7,143.1s38.9,35,25.3,61.5c-7.4,14.5-40.9,37.7-69.7,55.7l-42.9-46,29.2-24.6,58.1-46.6Z"/>
+        </g>
+  
+        <g id="tricot">
+          <path class="tricot" d="M200.8,69.2c0-14.4,10.3-28.3,10.3-28.3-25-10.5-105.8,22.6-86,66.2,22.3-15,19.6-2.6,51.5-9.2,24.1-13,31-7.8,24.2-28.8ZM189.6,135.3c-2.1,32.6,2.6,27.2-5,47.8,0,0,36.1,7.3,36.1,7.3l5.9-12.4c76,12.2,72,24.2,128.2-34.9-16.4-49.6-165.5-81.1-165.2-7.8ZM254.8,392.2c-24.5,7.6-29.5,15.9-18.7,39.9-.1,6.8,46.7-12.2,49.2-11.4,16.1-3.4,13-21.3,8.5-32.8-9.6,3.8-28.7,6.1-39,4.3Z"/>
+        </g>
+  
+        <g id="outline">
+          <path d="M171,312.1c-3.9-2.7-9.2-1.7-11.9,2.2-2.7,3.9-1.7,9.2,2.2,11.9,25.3,17.2,40.4,45.8,40.4,76.3,0,51-41.3,92.3-92.3,92.3-51,0-92.3-41.3-92.3-92.3,0-51,41.3-92.3,92.3-92.3,3,0,6,.1,8.9.4,4.7.5,8.9-3,9.3-7.7.5-4.7-3-8.9-7.7-9.3-3.5-.3-7-.5-10.6-.5h0c-36.2,0-70.1,17.9-90.5,47.9-34,50-21.1,118,28.9,152,50,34,118,21.1,152-28.9,34-50,21.1-118-28.9-152ZM504.4,362.6c-22-56.3-85.5-84-141.8-62-4.4,1.7-6.6,6.7-4.8,11.1,1.7,4.4,6.7,6.6,11.1,4.8,46.3-18.1,98.7,3.8,118.4,49.4,20.2,46.8-1.4,101.1-48.2,121.3-46.8,20.2-101.1-1.4-121.3-48.2,2.8-6,4.4-12.6,4.5-19.2l39.8-4.3c.5,1.6,1.1,3.2,1.8,4.7,9.8,21.4,35.1,30.9,56.5,21.1,21.4-9.8,30.9-35.1,21.1-56.5s-35.1-30.9-56.5-21.1l-58-79.9,12.4-32.2c4-2.8,7.7-5.3,11.1-7.8.4,0,.9.1,1.3.1h38.1c11.6,0,21-9.2,21.3-20.8.3-11.8-9-21.6-20.8-21.9,7.2-28.1-23.3-58.5-29-63.8-4.1-6-26.4-37.5-57-47.3-35.2-11.2-83.9-2.6-94-.6,2.5-2.4,3.3-6,2.1-9.2-1.4-3.8-3.1-9.3-3.1-11.2,0-11.3,8.5-23.1,8.6-23.2.9-1.2,1.4-2.6,1.6-4.1.6-4.7-2.8-8.9-7.5-9.5-1.8-.2-44.5-5.1-73.3,16.4-32.7,24.4-22.4,59.3-21.9,60.8.1.4.3.8.5,1.2,2,4.2,7.2,6,11.4,4l.8-.4,1.5,16.5c.4,4.4,4.1,7.8,8.5,7.8h6.4l6.9,8.2c2.9,3.5,7.3,5.6,11.9,5.6.9,0,1.8,0,2.6-.2,5.5-.9,10-4.6,12-9.8.4-1.2.8-2.2,1.2-3.2-.7,8.4-.5,16.9.5,25.4l-10,33.5-21.9,16.4-26.7-5.4c-.6-.1-1.1-.2-1.7-.2h-37.6c-.8,0-1.7.1-2.5.4-4.5,1.4-7.1,6.1-5.7,10.6l6.5,21.2c-5,6.7-4.4,15.9,1.4,21.9l11.8,12.2c5.8,6,14.5,8.1,22.4,5.5l18.1-6.1c.6-.2,1.1-.4,1.7-.8l12.7-7.6c-11,30-26.6,73.1-37,102.1-1,0-2.1-.2-3.2-.2-11.3,0-21.8,5.6-28.2,14.9-10.6,15.6-6.6,36.8,8.9,47.4,15.6,10.6,36.8,6.6,47.4-8.9s6.6-36.8-8.9-47.4c9.5-26.4,23.2-64.5,33.9-93.6l75.6,109.4-5.1,2.2h0c-9.1,4-13.8,14.2-10.9,23.7l6.6,21.5c.9,2.9,3.3,5.1,6.3,5.8,1.4,2.4,3.1,4.6,4.9,6.7,17.1,19.5,46.7,21.4,66.2,4.3,26.2,48.8,84.7,70.3,136.3,50.1,56.3-22,84-85.5,62-141.8ZM402.6,376.9c14.1,0,25.6,11.5,25.6,25.6,0,14.1-11.5,25.6-25.6,25.6-9.8,0-18.8-5.6-23-14.4l23.9-2.6c1.5-.2,2.9-.7,4.1-1.6,3.8-2.8,4.7-8.1,1.9-11.9l-14.2-19.6c2.4-.7,4.9-1.1,7.4-1.1ZM381.5,388.1l5.5,7.6-9.4,1c.7-3.1,2-6,3.8-8.6ZM112.4,419.4c-9.3,1.7-18.2-4.5-19.8-13.8s4.5-18.2,13.8-19.8c-3,8.4-4.9,13.7-5,13.9,0,0,0,0,0,0-1.6,4.4.8,9.3,5.2,10.9,4.4,1.6,9.3-.8,10.9-5.2,0-.2,2-5.4,5-13.9,1.9,2.3,3.2,5.1,3.8,8,1.7,9.3-4.5,18.2-13.8,19.8ZM380.5,218.4h9.2c2.4,0,4.3,1.9,4.3,4.3s-1.9,4.3-4.3,4.3h-17.9c3.1-2.7,6-5.5,8.7-8.5ZM198,136.2c1.7-16,10.1-27.3,14.8-29.6,16.1-3.1,32.5-4.7,48.9-4.9,12.7,0,26,1.2,37.3,4.8,19.8,6.3,36.4,25.1,44,35l-12.4,9.9c-3.7,2.9-4.3,8.3-1.3,12s8.3,4.3,12,1.3l12.7-10.2c9,9.7,26.1,31,18.3,46.2h0c-5.6,10.9-32.2,30.4-60.7,48.7l-31.7-34,42.2-35.2c3.7-2.9,4.3-8.3,1.3-12-2.9-3.7-8.3-4.3-12-1.3l-17.3,13.9-66.3-11.1c-3.8-.6-7.5,1.3-9.1,4.8l-3,6.4-20.4-4.1,2.6-8.9c.4-1.3.5-2.8.2-4.1,0,0-2-10.4-.2-27.4ZM303.4,274.7c3.8-2.3,7.7-4.7,11.5-7.1l-3.2,8.3-8.3-1.2ZM305.3,292.2l-17,44.1-12.6-45.4c1.3-.7,2.7-1.5,4.3-2.5,10.1,1.5,18.9,2.8,25.3,3.8ZM141.5,89.8l-9.2,4.4s0,0-.1,0c.2-8.8,3.4-21.4,17-31.6,14.6-10.9,34.7-13.3,47.8-13.6-2.9,6.4-4.4,13.3-4.6,20.2.2,3.6.8,7.1,1.9,10.5-6.6,3.9-13.5,7.4-20.7,10.3-12.4,4.8-24.8-.3-24.9-.4-2.3-1-4.9-.9-7.1.1ZM180,118.4c-4.2-1.8-9,0-11,4-.3.5-.6,1.1-4.6,11.6l-7.8-9.3c-1.6-1.9-4-3.1-6.5-3.1h-2.6l-1.1-12.7c0-.8-.3-1.6-.5-2.3,6.5,1.9,19.9,4.6,33.9-.7,3-1.2,6.1-2.5,9.1-4l3.3,1.8c-3.4,5.1-6,10.6-7.9,16.4l-4.1-1.8ZM120,226l11,2.2-8.8,6.6-18.2-4.2c-2.6-.6-5.2-.6-7.8,0l-1.4-4.5h25.2ZM128.9,258.9l-17.2,5.8c-1.7.5-3.5.1-4.7-1.1l-11.7-12.1,3.8-3.8c.3-.3.6-.4,1-.3l22.1,5.1c2.5.6,5,0,7.1-1.5l54.4-40.8c1.5-1.1,2.5-2.6,3.1-4.4l3.8-12.7,17.8,3.6-9.8,20.8-69.6,41.5ZM172.9,252.6h0s36.6-21.8,36.6-21.8c1.5-.9,2.6-2.2,3.3-3.7l18.7-39.6,45.5,7.6-61.9,52.1c-4.1,3.4-6.9,8-8.3,13.1h0c-17.4-2.6-28.2-4.1-34.9-5.1l1-2.7ZM178.3,273.4c10,1.5,20.1,2.9,30.1,4.4l24.3,74.4-54.5-78.9ZM223.5,269.2c-1.1-3.2,0-6.8,2.6-9l40.7-34,30.1,32.3c-12.6,7.7-25,14.9-35.4,20.7-3.5,1.9-5.2,5.9-4.1,9.7l25.7,92.7-9.9,2.6-12.3-.5-37.5-114.6ZM238.5,411h0c-.4-1.2.2-2.5,1.4-3l16.5-7.2,17.5.7c.1,0,.2,0,.3,0,.7,0,1.5,0,2.2-.3l11.3-3,1.3,4.7c0,.1,0,.3.1.4.9,4.1-1.7,8.1-5.8,9-.2,0-.4.1-.6.2l-40.1,12-4.1-13.4ZM275.2,448.9h0c-8.4,0-16.5-3.6-22.1-9.8l34.2-10.2c6.5-1.5,12-5.6,15.5-11.2.7-1.2,1.3-2.4,1.8-3.7.3,1.7.4,3.4.4,5.2,0,16.5-13.4,29.8-29.9,29.8ZM330.4,331.5c-3.6-3-9-2.5-12,1.1-9.3,11.2-16.3,24.1-20.5,38.1l-1.9-6.8,23.6-61.1,51.6,71c-6.3,6.9-10.1,15.6-11,24.8l-40.8,4.4c-1.9-5.1-4.6-9.9-8.1-14.1,2.5-16.7,9.5-32.4,20.3-45.4h0c3-3.6,2.5-9-1.1-12Z"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
 </body>
 </html>

@@ -4,9 +4,9 @@
 	/***********/
 
 	--whitespace--website:clamp(1em, 5cqw, 2em);
-	
 	font-size: clamp(1em, .9em + .5cqw, 1.25em);
 
+	/* grid */
 	display:grid;
 	grid-template-columns:
 		minmax(var(--whitespace--website), 1fr)
@@ -14,10 +14,11 @@
 		minmax(var(--whitespace--website), 1fr);
 	gap:3em 0;
 
+	/* scroll container */
 	@media (prefers-reduced-motion:no-preference) {
 		scroll-behavior: smooth;
 	}
-	scroll-padding-top:7.67em;
+	scroll-padding-top:8.75em;
 
 
 	/* text */
@@ -133,7 +134,7 @@
 			flex-basis:100%;
 			display: none;
 
-			.is-open & {
+			.is--open & {
 				display:flex;
 				justify-content:center;
 			}
@@ -183,7 +184,7 @@
 					translate:0 .25em;
 				}
 
-				.is-open & {
+				.is--open & {
 					&:nth-of-type(1) {
 						translate:0;
 						rotate:45deg;
@@ -234,7 +235,7 @@
 		picture {
 			display:block;
 			width:100%;
-			height:clamp(16em, 75cqw, 32em);
+			height:clamp(12em, 60cqw, 24em);
 		
 			img {
 				display:block;
@@ -246,6 +247,7 @@
 		}
 
 		dl {
+			position: relative;
 			display:grid;
 			justify-content:start;
 			gap:0 1em;
@@ -259,14 +261,36 @@
 				margin:0;
 			}
 		}
+		
+		@container (width < 16em) {
+			dl {
+				gap:0;
 
+				dt {
+					grid-row:unset;
+					grid-column:1;
+				}
+	
+				dd {
+					grid-column:1;
+				}
+
+				dd + dt {
+					margin-top:.5em;
+				}
+			}
+		}
+		
 		@container (width > 32em) {
 			display:grid;
 			grid-template-rows: repeat(3, auto);
 
 			picture {
 				grid-area:3/1;
-				border-radius:var(--radius--large);
+
+				img {
+					border-radius:var(--radius--large);
+				}
 			}
 
 			dl {
@@ -307,6 +331,8 @@
 			row-gap:var(--whitespace--website);
 
 			h1 {
+				position: relative;
+
 				grid-area:2/1;
 				place-self:start end;
 				z-index:1;
@@ -346,7 +372,10 @@
 
 			picture {
 				grid-area:2/1;
-				border-radius: var(--radius--xlarge);
+				
+				img {
+					border-radius: var(--radius--xlarge);
+				}
 			}
 
 			dl {
@@ -416,8 +445,16 @@
 		}
 
 
+		@container (width < 16em) {
+			ul {
+				grid-template-columns:1fr;
+			}
+		}
+		
 		@container (width > 36em) {
 			div {
+				position: relative;
+				
 				grid-area:1/1;
 				place-self: end;
 				min-width:50%;
@@ -538,7 +575,7 @@
 			margin:0 auto;
 
 			article:nth-of-type(2) {
-				grid-row:initial;
+				grid-area:initial;
 			}
 		}
 	}

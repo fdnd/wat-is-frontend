@@ -34,6 +34,7 @@ body {
 	margin:0;
 	
 	display:grid;
+	grid-template-columns: var(--whitespace) 1fr var(--whitespace);
 	grid-template-rows:max-content 1fr;
 }
 

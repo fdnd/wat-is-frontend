@@ -1,0 +1,571 @@
+/**************/
+/* PERFORMANT */
+/**************/
+
+[data-mode="performant"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--performant {
+		visibility: visible;
+	}
+
+
+
+  /*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		transform-style:preserve-3d;
+		transform:
+			rotateX(var(--rX, 0deg))
+			rotateY(var(--rY, 0deg));
+		
+		transition:transform .75s .6s;
+	}
+	
+	.thé-thing * {
+		transform-style:preserve-3d;
+	}
+
+
+
+  /**********/
+	/* LAYERS */
+	/**********/
+
+	.layer--performant {
+		--tY:0em;
+		--tZ:0em;
+
+		--tZ--expanded:min(calc(30vw + .5em), 13em);
+
+		display:grid;
+	
+		transition:translate .75s .6s;
+		
+		translate:0 0 calc(var(--tZ) * var(--factor, 0));
+	}
+
+	.layer--css { --factor:1; }
+	.layer--server { --factor:-1; }
+
+
+
+	/************************/
+	/* LAYERS -- CONNECTION */
+	/************************/
+
+	.layer--connection {
+		
+
+		transform:rotateX(90deg);
+		scale:1 0;
+
+		transition:
+			.75s .55s,
+			color 0s,
+			background-color 0s,
+			border-color 0s;
+	}
+
+	
+
+
+
+	/******************/
+	/* LAYERS → TITLE */
+	/******************/
+
+	.layer--performant__title {
+		display:block;
+
+		transition:
+			translate .25s .25s,
+			transform .25s;
+	}
+}
+
+
+
+
+
+/*******************/
+/* PERFORMANT → ON */
+/*******************/
+
+[data-mode="performant"][data-mode-status="true"] {
+
+	/********/
+	/* INFO */
+	/********/
+
+	.info--performant {
+		translate: 0;
+
+		@media (prefers-reduced-motion:no-preference) {
+			transition:translate .5s;
+		}
+	}
+
+
+
+	/*************/
+	/* THÉ THING */
+	/*************/
+
+	.thé-thing {
+		--rX:-30deg;
+		--rY:66deg;
+
+		transition:transform .75s;
+	}
+
+
+
+	/**********/
+	/* LAYERS */
+	/**********/
+
+	.layer--performant {
+		--tZ: var(--tZ--expanded);
+		
+		transition:translate .5s .75s;
+	}
+
+
+
+
+	/************************/
+	/* LAYERS -- CONNECTION */
+	/************************/
+
+	.layer--connection {
+		scale:1 1;
+
+		transition:
+			.5s .75s,
+			color 0s,
+			background-color 0s,
+			border-color 0s;
+	}
+
+
+
+	/******************/
+	/* LAYERS → TITLE */
+	/******************/
+	
+	.layer--performant__title {
+		translate:0 calc(-100% - 1.5em);
+		
+		transform:
+			rotateY( calc(var(--rY) * -1) )
+			rotateX( calc(var(--rX) * -1) );
+		
+		transition:
+			translate .5s 1.35s,
+			transform .25s 1.85s ease-in;
+	}
+
+
+
+	/**************/
+	/* RESPONSIVE */
+	/**************/
+
+	@media (width > 28em) {
+		.thé-thing {
+			--rY:59deg;
+		}
+	}
+	
+	@media (width > 34em) {
+		.thé-thing {
+			--rY:52deg;
+		}
+	}
+	
+	@media (width > 40em) {
+		.thé-thing {
+			--rY:45deg;
+		}
+	}
+}
+
+
+
+
+
+
+
+/**************/
+/* CONNECTION */
+/**************/
+
+.layer--connection {
+	--color-connection:light-dark(var(--blue), var(--yellow));
+	
+	container-type:inline-size;
+
+	position: relative;
+	place-self:center;
+	width:calc(100% - var(--whitespace) * 2);
+	height:calc( var(--tZ) * 2 - 1px);
+
+	writing-mode: vertical-rl;
+	place-items: center;
+	place-content: center;
+
+	color:var(--color-connection);
+	border:var(--border--thin);
+	border-color:currentColor;
+	border-radius:1px;
+
+	/* fade */
+	&:before {
+		content:"";
+		position:absolute;
+		inset:0;
+
+		background-image: 
+		linear-gradient(
+			30deg in oklch,
+			color-mix(in oklch, light-dark(var(--purple), var(--green)), transparent 25%) 20%,
+			color-mix(in oklch, light-dark(var(--green), var(--purple)), transparent 25%) 80%
+		);
+		backdrop-filter:blur(2px);
+	}
+
+	/* text */
+	p {
+		width:6em;
+		height:min( calc(100cqh - var(--whitespace) * 2), 40em );
+
+		display:grid;
+		place-items:center;
+		place-content:center;
+		text-align:center;
+
+		background-color:light-dark(var(--yellow), var(--blue));
+		border-radius:3em;
+
+		border:var(--border--thin);
+		border-color: currentColor;
+	}
+}
+
+
+
+
+
+/***********/
+/* BICYCLE */
+/***********/
+
+@property --tZbicycle {
+	syntax:"<length>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-tY-dir {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-rZ {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-tY {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-rX {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-scY {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+.bicycle {
+	--n:12;
+	--duration:8s;
+
+	--tZbicycle:calc( var(--tZ--expanded) - var(--whitespace) - 3em);
+
+	--cyclist-tY:-3;
+	--cyclist-rX:0;
+	--cyclist-scY:1;
+
+	position:absolute;
+	width:1.5em;
+	aspect-ratio:1;
+
+	transform-origin: bottom;
+
+	transform: 
+			translateY( calc( var(--tZbicycle) * var(--cyclist-tY-dir) - .75em) )
+			rotate( calc( var(--cyclist-rZ) * 1deg) )
+			translateY( calc( var(--cyclist-tY) * 1em) )
+			rotateX( calc( var(--cyclist-rX) * 1deg) )
+			scaleY( var(--cyclist-scY) );
+			
+
+	&:nth-of-type(1) {--i:1;}
+	&:nth-of-type(2) {--i:2;}
+	&:nth-of-type(3) {--i:3;}
+	&:nth-of-type(4) {--i:4;}
+	&:nth-of-type(5) {--i:5;}
+	&:nth-of-type(6) {--i:6;}
+	&:nth-of-type(7) {--i:7;}
+	&:nth-of-type(8) {--i:8;}
+	&:nth-of-type(9) {--i:9;}
+	&:nth-of-type(10) {--i:10;}
+	&:nth-of-type(11) {--i:11;}
+	&:nth-of-type(12) {--i:12;}
+}
+
+.bicycle svg {
+	width:1.5em;
+	height:1.5em;
+}
+
+/* #cyclist { */
+	#color {
+		fill:var(--fpc-default);
+	}
+
+
+svg:nth-of-type(3n + 1) {
+	--fpc-default: var(--green);
+}
+svg:nth-of-type(3n + 2) {
+	--fpc-default: var(--purple);
+}
+svg:nth-of-type(3n + 3) {
+	--fpc-default: var(--yellow);
+}
+
+
+/* open */
+
+[data-mode="performant"] .bicycle {
+	--cyclist-scY:0;
+	--cyclist-rX:0;
+
+	transition:
+		--cyclist-rX 0s 1s,
+		--cyclist-scY .5s;
+
+	animation:
+		--ani-bicycle var(--duration) calc( var(--duration) / var(--n) * var(--i) * -1 ) infinite linear;
+}
+
+/* on */
+
+[data-mode="performant"][data-mode-status="true"] .bicycle {
+	--cyclist-scY:1;
+	--cyclist-rX:-90;
+
+	transition:
+	--tZbicycle .5s .75s,
+	--cyclist-rX 2.5s 3.65s,
+	--cyclist-scY 1s 1.15s;
+		
+}
+
+/* oval animation */
+	
+@keyframes --ani-bicycle {
+	0% {
+		--cyclist-tY-dir:-1;
+		--cyclist-rZ:90;
+	}
+	20% {
+		--cyclist-tY-dir:-1;
+		--cyclist-rZ:-90;
+	}
+	50% {
+		--cyclist-tY-dir:1;
+		--cyclist-rZ:-90;
+	}
+	70% {
+		--cyclist-tY-dir:1;
+		--cyclist-rZ:-270;
+	}
+	100% {
+		--cyclist-tY-dir:-1;
+		--cyclist-rZ:-270;
+	}
+}
+
+
+
+
+
+
+
+/**********/
+/* SERVER */
+/**********/
+
+.server {
+	container-type: inline-size;
+	padding:var(--whitespace);
+
+	display:grid;
+	gap:3cqw;
+
+	/* spacers */
+	background-image: 
+		linear-gradient(
+			90deg,
+			transparent calc(10% + -1px),
+			currentColor 0 10%,
+			transparent 0 15%,
+			currentColor 0 calc(15% + 1px),
+			transparent 0 calc(85% - 1px),
+			currentColor 0 85%,
+			transparent 0 90%,
+			currentColor 0 calc(90% + 1px),
+			transparent 0
+		);
+		
+	background-size:
+		calc(100% - var(--whitespace) * 2)
+		calc(100% - var(--whitespace) * 2);
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+/* SERVERS */
+
+.server div {
+	padding: 0 9cqw;
+	display:flex;
+	align-items:center;
+	gap:3cqw;
+
+	border-radius: var(--radius--medium);
+	border:var(--border--thin);
+	border-color:currentcolor;
+
+	background-color: light-dark(var(--yellow), var(--blue));
+	background-image: 
+		repeating-linear-gradient(
+			currentcolor 0 1px,
+			transparent 0 3cqw
+		);
+	background-size: 30cqw calc(12cqw + 1px);
+	background-position: calc(100% - 9cqw) center;
+	background-repeat:no-repeat;
+}
+
+/* SERVERS → LAMPJE */
+
+.server div span {
+	display:block;
+	width:6cqw;
+	aspect-ratio:1;
+
+	display:grid;
+	place-items:center;
+
+	border:var(--border--thin);
+	border-color:currentcolor;
+	border-radius:50%;
+}
+
+/* SERVERS → LAMPJE → LED */
+
+.server div span::after {
+	content:"";
+	width:calc(100% - 4px);
+	aspect-ratio:1;
+	border:inherit;
+	border-radius:inherit;
+}
+
+.server div span:nth-of-type(1):after {
+	background-color:var(--green);
+	border-color:light-dark(currentcolor, var(--green));
+}
+
+.server div span:nth-of-type(2):after {
+	background-color:var(--purple);
+	border-color:light-dark(currentcolor, var(--purple));
+}
+
+@media (prefers-reduced-motion:no-preference) {
+	.server div span:after {
+		animation-duration:12s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+	}
+
+	.server div span:nth-of-type(1):after {
+		animation-name:--ani-server-light-green;
+	}
+	.server div span:nth-of-type(2):after {
+		animation-name:--ani-server-light-purple;
+	}
+
+	.server div:nth-of-type(1) span:after {
+		animation-delay:-3.37s;
+	}
+	.server div:nth-of-type(2) span:after {
+		animation-delay:-6.13s;
+	}
+	.server div:nth-of-type(3) span:after {
+		animation-delay:-3.53s;
+	}
+	.server div:nth-of-type(4) span:after {
+		animation-delay:-8.37s;
+	}
+	.server div:nth-of-type(5) span:after {
+		animation-delay:-8.47s;
+	}
+	.server div:nth-of-type(6) span:after {
+		animation-delay:-8.11s;
+	}
+	.server div:nth-of-type(7) span:after {
+		animation-delay:-3.47s;
+	}
+	
+	@keyframes --ani-server-light-green {
+		0%, 90%, 95%, 96%, 100% {
+			background-color:var(--green);
+			border-color:light-dark(currentcolor, var(--green));
+		}
+		91%, 94%, 97%, 99% {
+			background-color:transparent;
+			border-color:light-dark(currentcolor, transparent);
+		}
+	}
+	
+	@keyframes --ani-server-light-purple {
+		0%, 90%, 95%, 96%, 100% {
+			background-color:transparent;
+			border-color:light-dark(currentcolor, transparent);
+		}
+		91%, 94%, 97%, 99% {
+			background-color:var(--purple);
+			border-color:light-dark(currentcolor, var(--purple));
+		}
+	}
+}
