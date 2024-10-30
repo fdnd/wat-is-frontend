@@ -1,32 +1,11 @@
 aside {
 	position:fixed;
-	right:0;
-	bottom:0;
+	right:.5em;
+	bottom:.5em;
 	z-index:30;
 
 	background-color:var(--background);
-	border-radius: var(--radius--large) 0 0 0;
-
-	&::before,
-	&::after {
-		content:"";
-		position:absolute;
-
-		width:var(--radius--large);
-		aspect-ratio:1;
-
-		background-image: radial-gradient(farthest-side at left top, transparent 100%, var(--background) 0);
-	}
-
-	&::before {
-		right:0;
-		bottom:100%;
-	}
-
-	&::after {
-		bottom:0;
-		right:100%;
-	}
+	border-radius: var(--radius--medium);
 }
 
 
@@ -37,5 +16,5 @@ aside {
 form {
 	display:flex;
 
-	padding:.5em;
+	padding:.25em;
 }

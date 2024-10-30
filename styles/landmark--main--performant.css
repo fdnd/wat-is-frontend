@@ -326,10 +326,13 @@
 	initial-value:0;
 }
 
+
 /* the template */
 #tricot {
 	fill:var(--fill-tricot);
 }
+
+
 
 /* a bicycle */
 .bicycle {
