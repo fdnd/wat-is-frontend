@@ -86,7 +86,7 @@ main > * {
 	width:min(100cqw, 18em);
 	height:min(200cqw, 36em);
 	place-self:center;
-	margin:9em 0 var(--pB, 9em);
+	margin:9em 0;
 	
 	display:grid;
 }
