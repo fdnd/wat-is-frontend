@@ -414,8 +414,8 @@ svg:nth-of-type(3n + 3) {
 
 	transition:
 	--tZbicycle .5s .75s,
-	--cyclist-rX 2.5s 3s,
-	--cyclist-rX-corner 2.5s 3s,
+	--cyclist-rX 4s 3s,
+	--cyclist-rX-corner 4s 3s,
 	--cyclist-scY 1s 1.15s;
 		
 }
