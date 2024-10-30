@@ -308,6 +308,18 @@
 	initial-value:0;
 }
 
+@property --cyclist-rX-corner {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
+@property --cyclist-rX-corner-factor {
+	syntax:"<number>";
+	inherits:true;
+	initial-value:0;
+}
+
 @property --cyclist-scY {
 	syntax:"<number>";
 	inherits:true;
@@ -327,7 +339,6 @@
 	--tZbicycle:calc( var(--tZ--expanded) - var(--whitespace) - 3em);
 
 	--cyclist-tY:-3;
-	--cyclist-rX:0;
 	--cyclist-scY:1;
 
 	position:absolute;
@@ -340,7 +351,7 @@
 			translateY( calc( var(--tZbicycle) * var(--cyclist-tY-dir) - .75em) )
 			rotate( calc( var(--cyclist-rZ) * 1deg) )
 			translateY( calc( var(--cyclist-tY) * 1em) )
-			rotateX( calc( var(--cyclist-rX) * 1deg) )
+			rotateX( calc( (var(--cyclist-rX) + var(--cyclist-rX-corner) * var(--cyclist-rX-corner-factor) ) * 1deg) )
 			scaleY( var(--cyclist-scY) );
 			
 
@@ -362,7 +373,6 @@
 	width:1.5em;
 	height:1.5em;
 }
-
 
 svg:nth-of-type(3n + 1) {
 	--fill-tricot: var(--green);
@@ -392,11 +402,6 @@ svg:nth-of-type(3n + 3) {
 			var(--duration)
 			calc( var(--duration) / var(--n) * var(--i) * -1 ) 
 			infinite
-			linear,
-		--ani-bicycle-angle 
-			var(--duration) 
-			calc( var(--duration) / var(--n) * var(--i) * -1 + var(--duration) * 1.5 ) 
-			infinite
 			linear;
 }
 
@@ -405,10 +410,12 @@ svg:nth-of-type(3n + 3) {
 [data-mode="performant"][data-mode-status="true"] .bicycle {
 	--cyclist-scY:1;
 	--cyclist-rX:-90;
+	--cyclist-rX-corner:-30;
 
 	transition:
 	--tZbicycle .5s .75s,
 	--cyclist-rX 2.5s 3s,
+	--cyclist-rX-corner 2.5s 3s,
 	--cyclist-scY 1s 1.15s;
 		
 }
@@ -419,46 +426,33 @@ svg:nth-of-type(3n + 3) {
 	0% {
 		--cyclist-tY-dir:-1;
 		--cyclist-rZ:90;
-	}
-	20% {
-		--cyclist-tY-dir:-1;
-		--cyclist-rZ:-90;
-	}
-	50% {
-		--cyclist-tY-dir:1;
-		--cyclist-rZ:-90;
-	}
-	70% {
-		--cyclist-tY-dir:1;
-		--cyclist-rZ:-270;
-	}
-	100% {
-		--cyclist-tY-dir:-1;
-		--cyclist-rZ:-270;
-	}
-}
-
-@keyframes --ani-bicycle-angle {
-	0% {
-		--cyclist-rX:-90;
+		--cyclist-rX-corner-factor:0;
 	}
 	10% {
-		--cyclist-rX:-120;
+		--cyclist-rX-corner-factor:1;
 	}
 	20% {
-		--cyclist-rX:-90;
+		--cyclist-tY-dir:-1;
+		--cyclist-rZ:-90;
+		--cyclist-rX-corner-factor:0;
 	}
 	50% {
-		--cyclist-rX:-90;
+		--cyclist-tY-dir:1;
+		--cyclist-rZ:-90;
+		--cyclist-rX-corner-factor:0;
 	}
 	60% {
-		--cyclist-rX:-120;
+		--cyclist-rX-corner-factor:1;
 	}
 	70% {
-		--cyclist-rX:-90;
+		--cyclist-tY-dir:1;
+		--cyclist-rZ:-270;
+		--cyclist-rX-corner-factor:0;
 	}
 	100% {
-		--cyclist-rX:-90;
+		--cyclist-tY-dir:-1;
+		--cyclist-rZ:-270;
+		--cyclist-rX-corner-factor:0;
 	}
 }
 
