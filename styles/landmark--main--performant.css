@@ -41,7 +41,7 @@
 		--tY:0em;
 		--tZ:0em;
 
-		--tZ--expanded:min(calc(30vw + .5em), 13em);
+		--tZ--expanded:min(calc(30vw + .5em), 12em);
 
 		display:grid;
 	
@@ -118,8 +118,8 @@
 	/*************/
 
 	.thé-thing {
-		--rX:-30deg;
-		--rY:66deg;
+		--rX:-37.5deg;
+		--rY:65deg;
 
 		transition:transform .75s;
 	}
@@ -179,19 +179,19 @@
 
 	@media (width > 28em) {
 		.thé-thing {
-			--rY:59deg;
+			--rY:60deg;
 		}
 	}
 	
-	@media (width > 34em) {
+	@media (width > 32em) {
 		.thé-thing {
-			--rY:52deg;
+			--rY:55deg;
 		}
 	}
 	
-	@media (width > 40em) {
+	@media (width > 36em) {
 		.thé-thing {
-			--rY:45deg;
+			--rY:50deg;
 		}
 	}
 }
