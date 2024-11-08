@@ -75,7 +75,6 @@ button {
 /* pressed */
 .button--squeaky[aria-pressed=true] {
 	
- 
 	span {
 		color:var(--color-button--pressed);
 		background-color:var(--bg-button__span--pressed);

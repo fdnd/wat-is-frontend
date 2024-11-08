@@ -24,7 +24,7 @@ main > * {
 
 .info {
 	position:relative;
-	z-index:5;
+	z-index:20;
 
 	place-self:start;
 	max-width:22em;
@@ -33,6 +33,7 @@ main > * {
 	justify-items:start;
 
 	visibility:hidden;
+	overflow:hidden;
 
 	translate: calc(-100% - var(--whitespace));
 
@@ -59,7 +60,7 @@ main > * {
 
 /* open */
 .info[open] {
-	width:calc(100%);
+	width:100%;
 }
 
 /* hover */
